@@ -1,3 +1,72 @@
+/* Checkout Header Styles */
+.checkout-header {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-bottom: 1px solid rgb(222, 222, 222);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+.checkout-header .header-content {
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.checkout-header .checkout-header-left-section {
+    display: flex;
+    align-items: center;
+}
+
+.checkout-header .logo {
+    height: 30px;
+}
+
+.checkout-header .mobile-logo {
+    display: none;
+    height: 26px;
+}
+
+@media (max-width: 575px) {
+    .checkout-header .logo {
+        display: none;
+    }
+
+    .checkout-header .mobile-logo {
+        display: block;
+    }
+}
+
+.checkout-header .checkout-header-middle-section {
+    font-size: 18px;
+    font-weight: 500;
+    color: rgb(33, 33, 33);
+}
+
+.checkout-header .return-to-home-link {
+    color: rgb(25, 135, 84);
+    text-decoration: none;
+}
+
+.checkout-header .return-to-home-link:hover {
+    text-decoration: underline;
+}
+
+.checkout-header .checkout-header-right-section img {
+    height: 28px;
+}
+
+/* Checkout Page Styles */
 .checkout-page {
     max-width: 1100px;
     padding-left: 30px;

@@ -1,4 +1,6 @@
 import React from 'react'
+import '../styles/shared/general.css'
+import '../styles/shared/header.css'
 import './order.css'
 
 function Order() {
