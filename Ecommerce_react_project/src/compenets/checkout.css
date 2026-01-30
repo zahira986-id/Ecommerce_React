@@ -28,29 +28,48 @@
     align-items: center;
 }
 
-.checkout-header .logo {
-    height: 30px;
+.checkout-header .checkout-header-left-section a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
 }
 
-.checkout-header .mobile-logo {
-    display: none;
-    height: 26px;
+.checkout-header .logo-text {
+    font-size: 19px;
+    font-weight: 700;
+    color: rgb(8, 79, 45);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: opacity 0.15s;
+}
+
+.checkout-header .logo-text:hover {
+    opacity: 0.8;
 }
 
 @media (max-width: 575px) {
-    .checkout-header .logo {
-        display: none;
+    .checkout-header .logo-text {
+        font-size: 16px;
     }
+}
 
-    .checkout-header .mobile-logo {
-        display: block;
-    }
+.checkout-header .logo,
+.checkout-header .mobile-logo {
+    display: none;
 }
 
 .checkout-header .checkout-header-middle-section {
     font-size: 18px;
     font-weight: 500;
     color: rgb(33, 33, 33);
+}
+
+/* On s'assure que le lien de retour est bien aligné */
+.checkout-header .return-to-home-link {
+    color: rgb(25, 135, 84);
+    text-decoration: none;
+    font-weight: 700;
+    margin-left: 5px;
 }
 
 .checkout-header .return-to-home-link {

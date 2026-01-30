@@ -2,16 +2,20 @@ import React from 'react'
 import '../styles/shared/general.css'
 import '../styles/shared/header.css'
 import './order.css'
+// useCart: Hook personnalisé pour accéder aux données du panier
+import { useCart } from '../context/CartContext'
 import { Link } from 'react-router-dom'
 
 function Order() {
+    // Récupération de la fonction pour obtenir le nombre total d'articles dans le panier
+    const { getCartQuantity } = useCart()
+
     return (
         <>
             <div className="header">
                 <div className="left-section">
                     <Link to="/" className="header-link">
-                        <img className="logo" src="images/logo-white.png" />
-                        <img className="mobile-logo" src="images/mobile-logo-white.png" />
+                        <span className="logo-text">ID OMAR Zahira</span>
                     </Link>
                 </div>
 
@@ -30,8 +34,9 @@ function Order() {
 
                     <Link to="/checkout" className="cart-link header-link">
                         <img className="cart-icon" src="images/icons/cart-icon.png" />
-                        <div className="cart-quantity">3</div>
-                        <div className="cart-text">Cart</div>
+                        {/* Affiche dynamiquement le nombre d'articles dans le panier */}
+                        <div className="cart-quantity">{getCartQuantity()}</div>
+                        <div className="cart-text">Panier</div>
                     </Link>
                 </div>
             </div>

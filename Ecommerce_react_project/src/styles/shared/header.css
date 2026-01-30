@@ -26,7 +26,8 @@
 }
 
 .header .header-link {
-  display: inline-block;
+  display: flex;
+  align-items: center;
   padding: 6px 9.5px;
   border-radius: 2px;
   cursor: pointer;
@@ -38,25 +39,30 @@
   border: 1px solid white;
 }
 
-.header .logo {
-  height: 26px;
-  margin-top: 1px;
+.header .logo-text {
+  margin-left: 50px;
+  font-size: 19px;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: opacity 0.15s;
 }
 
-.header .mobile-logo {
-  display: none;
+.header .logo-text:hover {
+  opacity: 0.8;
 }
 
 @media (max-width: 675px) {
-  .header .logo {
-    display: none;
+  .header .logo-text {
+    font-size: 16px;
+    margin-left: 5px;
   }
+}
 
-  .header .mobile-logo {
-    display: block;
-    height: 26px;
-    margin-top: 1px;
-  }
+.header .logo,
+.header .mobile-logo {
+  display: none;
 }
 
 .header .middle-section {
@@ -71,7 +77,7 @@
   flex: 1;
   width: 0;
   font-size: 16px;
-  height: 38px;
+  height: 40px;
   padding-left: 15px;
   border: none;
   border-top-left-radius: 5px;
@@ -104,12 +110,10 @@
 }
 
 .header .orders-link {
+  margin-left: 20px;
+  font-size: 15px;
+  font-weight: 700;
   color: white;
-
-  display: flex;
-  align-items: center;
-  padding-left: 13px;
-  padding-right: 13px;
 }
 
 .header .orders-text {
@@ -136,14 +140,36 @@
 }
 
 .header .cart-quantity {
-  color: rgb(8, 79, 45);
+  color: black;
   font-size: 14px;
+  /* Slightly larger for bold black text */
   font-weight: 700;
 
   position: absolute;
-  top: 8.5px;
-  right: 46px;
+  /* Centrage précis sur l'icône du panier */
+  top: 9px;
+  left: 16px;
 
   width: 26px;
   text-align: center;
+}
+
+/* Animation pour le compteur du panier quand il est mis à jour */
+@keyframes cart-pop {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.4);
+    color: #fbda10;
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.cart-quantity-bump {
+  animation: cart-pop 0.3s ease-in-out;
 }

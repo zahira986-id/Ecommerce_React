@@ -30,6 +30,9 @@ function Home() {
     // État local pour gérer l'affichage du message "Ajouté" par produit
     const [addedProducts, setAddedProducts] = useState({})
 
+    // État pour animer le compteur du panier dans le header
+    const [cartBump, setCartBump] = useState(false)
+
     /**
      * Gère le changement de quantité dans le sélecteur
      * @param {string} productId - L'ID du produit
@@ -49,6 +52,10 @@ function Home() {
 
         // Ajoute le produit au panier via le CartContext
         addToCart(productId, quantity)
+
+        // Déclenche l'animation du compteur dans le header
+        setCartBump(true)
+        setTimeout(() => setCartBump(false), 300)
 
         // Affiche le message "Ajouté" pour ce produit
         setAddedProducts(prev => ({ ...prev, [productId]: true }))
@@ -86,8 +93,7 @@ function Home() {
                 <div className="left-section">
                     {/* Link remplace <a> pour une navigation sans rechargement */}
                     <Link to="/" className="header-link">
-                        <img className="logo" src="images/logo-white.png" alt="Logo" />
-                        <img className="mobile-logo" src="images/mobile-logo-white.png" alt="Logo" />
+                        <span className="logo-text">ID OMAR Zahira</span>
                     </Link>
                 </div>
 
@@ -110,7 +116,9 @@ function Home() {
                     <Link className="cart-link header-link" to="/checkout">
                         <img className="cart-icon" src="images/icons/cart-icon.png" alt="Panier" />
                         {/* getCartQuantity() retourne le nombre total d'articles */}
-                        <div className="cart-quantity">{getCartQuantity()}</div>
+                        <div className={`cart-quantity ${cartBump ? 'cart-quantity-bump' : ''}`}>
+                            {getCartQuantity()}
+                        </div>
                         <div className="cart-text">Panier</div>
                     </Link>
                 </div>

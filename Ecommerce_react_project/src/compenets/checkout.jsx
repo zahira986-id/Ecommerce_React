@@ -35,10 +35,9 @@ function Checkout() {
                 <div className="checkout-header">
                     <div className="header-content">
                         <div className="checkout-header-left-section">
-                            <a href="/">
-                                <img className="logo" src="images/logo.png" alt="Logo" />
-                                <img className="mobile-logo" src="images/mobile-logo.png" alt="Logo" />
-                            </a>
+                            <Link to="/">
+                                <span className="logo-text">ID OMAR Zahira</span>
+                            </Link>
                         </div>
 
                         <div className="checkout-header-middle-section">
@@ -65,10 +64,9 @@ function Checkout() {
             <div className="checkout-header">
                 <div className="header-content">
                     <div className="checkout-header-left-section">
-                        <a href="/">
-                            <img className="logo" src="images/logo.png" alt="Logo" />
-                            <img className="mobile-logo" src="images/mobile-logo.png" alt="Logo" />
-                        </a>
+                        <Link to="/">
+                            <span className="logo-text">ID OMAR Zahira</span>
+                        </Link>
                     </div>
 
                     <div className="checkout-header-middle-section">
