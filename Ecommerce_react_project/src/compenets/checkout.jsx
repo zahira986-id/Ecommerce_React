@@ -3,6 +3,7 @@ import { useCart } from '../context/CartContext'
 import { products } from '../data/products'
 import '../styles/shared/general.css'
 import './checkout.css'
+import { Link } from 'react-router-dom'
 
 function Checkout() {
     const { cart, getCartQuantity, removeFromCart } = useCart()
